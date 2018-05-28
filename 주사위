@@ -1,0 +1,62 @@
+#include <stdio.h>
+#include <time.h>
+#include <stdlib.h>
+
+int random(int lower, int upper);
+
+int main()
+{
+	int x, i;
+	int a=0,b=0,c=0,d=0,e=0,f=0,g=0;
+	int lower = 1;
+	int upper = 6;
+	printf("주사위 던질 횟수: ");
+	scanf("%d", &x);
+
+	srand((unsigned int) time(0));
+
+	for(i=1; i<=x; i++)
+	{
+		g= random(lower, upper);
+
+		switch(g)
+		{
+		    case 1:
+			a++;
+			break;
+		
+			case 2:
+			b++;
+			break;
+		
+			case 3:
+			c++;
+			break;
+
+			case 4:
+			d++;
+			break;
+		
+			case 5:
+			e++;
+			break;
+		
+			case 6:
+			f++;
+			break;
+		}
+		printf("%d ", g);
+		}
+	printf("\n1 : %d\n",a);
+	printf("2 : %d\n",b);
+	printf("3 : %d\n",c);
+	printf("4 : %d\n",d);
+	printf("5 : %d\n",e);
+	printf("6 : %d\n",f);
+	}
+
+int random(int lower, int upper)
+{
+	return rand() % upper + lower;
+}
+
